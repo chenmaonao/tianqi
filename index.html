@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<link type="text/css" rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+		
+		<div class="main-box">
+			
+
+			
+			
+			<div class="top">
+				<h3 id="city" data-city = "guangzhou"><i id="city-name">广州市</i><span></span></h3>
+				
+				<div class="search-box clearfix">
+				<!-- <span id="back"><img class="auto-img" src="img/返回.png"></span> -->
+					<input type="text" placeholder="请输入城市" id="get-city"/>
+					<span id="search"><img class="auto-img" src="img/搜索.png"></span>
+				</div>
+			</div>
+			<div class="T-box">
+				<h1 id="now-tem">18</h1>
+				<h1 class="weather-number">-18/-14°</h1>
+				<p><span id = "nowday-cond">下雪</span><span class="nowday-img"><img class="auto-img weather-img" src=""></span></p>
+				<p class="weather-date"></p>
+			</div>
+			
+			<!-- 逐渐小时 -->
+			<div class="hourly-weather">
+				<ul class="clearfix">
+					<!-- <li class="hourly-tmp">
+						<span class="hourly-time">现在</span>
+						<i class="hourly-img">
+							<img class="auto-img" src="img/baoxue.png">
+						</i>
+						<span class="hourly-nub">28</span>
+					</li> -->
+					
+				</ul>
+			</div>
+			
+			
+			
+			
+			<div class="future-day">
+				<ul>
+					<li class="temp-box"><h4 class="weather-date">2月4日星期二</h4><span><img class="auto-img weather-img" src=""></span><i class="weather-number">18°/16°</i></li>
+					<li class="temp-box"><h4 class="weather-date">2月4日星期二</h4><span><img class="auto-img weather-img" src=""></span><i class="weather-number">18°/16°</i></li>
+					<li class="temp-box"><h4 class="weather-date">2月4日星期二</h4><span><img class="auto-img weather-img" src=""></span><i class="weather-number">18°/16°</i></li>
+					<li class="temp-box"><h4 class="weather-date">2月4日星期二</h4><span><img class="auto-img weather-img" src=""></span><i class="weather-number">18°/16°</i></li>
+					<li class="temp-box"><h4 class="weather-date">2月4日星期二</h4><span><img class="auto-img weather-img" src=""></span><i class="weather-number">18°/16°</i></li>
+					<li class="temp-box"><h4 class="weather-date">2月4日星期二</h4><span><img class="auto-img weather-img" src=""></span><i class="weather-number">18°/16°</i></li>
+				</ul>
+			</div>
+		</div>
+		
+	<script src="js/weather_img.js"></script>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/rem.js"></script>
+	<script src="js/index.js"></script>
+	<script>
+		$(function(){
+			$.ajax({
+				url : "https://api.heweather.net/s6/weather/now?",
+				type : "get",
+				data : {
+					key:"8348b4718d3d4c79ba3ab39a5c56737b",
+					location : "广州"
+				},
+				success : function(a,b,c,d){
+					//console.log(a)
+					 $("#now-tem").text(a.HeWeather6[0].now.tmp+"°")
+				}
+			})
+		
+			$.ajax({
+				url : "https://api.heweather.net/s6/weather/hourly?",
+				type : "get",
+				data : {
+					key:"8348b4718d3d4c79ba3ab39a5c56737b",
+					location : "广州"
+				},
+				success : function(a,b,c,d){
+					var data = a.HeWeather6[0].hourly;
+					console.log(data)
+					for(var i = 0 ;i<data.length;i++){
+						if(i==0){
+							data[i].time = "现在";
+						}
+						data[i].time = data[i].time.slice(-5);
+						
+						
+						var li = $(`<li class="hourly-tmp">
+						<span class="hourly-time">${data[i].time}</span>
+						<i class="hourly-img">
+							<img class="auto-img" src="${weather_img[data[i].cond_txt]}">
+						</i>
+						<span class="hourly-nub">${data[i].tmp}</span>
+					</li>`);
+					$(".hourly-weather ul").append(li)
+					}
+				}
+			})
+		
+		})
+		
+		// $(function(){
+		// 	$.ajax({
+		// 		url : "http://v.juhe.cn/weather/index",
+		// 		type : "get",
+		// 		dataType: 'json',
+		// 		data : {
+		// 			format : "1",
+		// 			key:"11d567c3eddc745b9e97777b6a2d3771",
+		// 			cityname : "广州"
+		// 		},
+		// 		success : function(a,b,c,d){
+		// 			console.log(a,b,c,d);
+		// 		}
+		// 	})
+		// })
+	</script>
+	
+	</body>
+
+</html>

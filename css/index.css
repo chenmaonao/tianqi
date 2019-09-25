@@ -1,0 +1,188 @@
+body{
+	margin: 0px;
+	font-size: .12rem;
+}
+p{
+	margin: 0;
+}
+i{
+	font-style: normal;
+}
+ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+h3{
+	font-size: 0.19rem;
+	margin: 0px;
+}
+h1{
+	font-size: 0.8rem;
+	margin: 0px;
+}
+.clearfix:after{
+	width: 0px;
+	content: "";
+	display: block;
+	clear: both;
+}
+.auto-img{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.main-box{
+	background:linear-gradient(#284241,#A0C9C4);
+}
+.top{
+	text-align: center;
+	height: 0.5rem;
+}
+.search-box{
+	display: none;
+}
+#get-city{
+	margin-top: .06rem;
+	padding: 0;
+	border: none;
+	font-size: .24rem;
+	height: .4rem;
+	width: 55%;
+	outline: none;
+	background-color: #A0C9C4;
+	float: left;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+
+#search{
+	margin-top: .06rem;
+	display: inline-block;
+	width: .4rem;
+	height: .4rem;
+	float: left;
+	background-color: #A0C9C4;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+/* #back{
+	display: inline-block;
+	width: 60px;
+	height: .5rem;
+	float: left;
+	background-color: #A0C9C4;
+} */
+
+
+
+
+
+.top h3{
+	width: 30%;
+	line-height: .5rem;
+	color: #FFFFFF;
+	font-weight: 400;
+	margin: 0 auto;
+}
+.top h3 span{
+	
+	margin-bottom: -4px;
+	margin-left: 10px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url(../img/定位.png);
+}
+.main-box .T-box{
+	text-align: center;
+	width: 100%;
+	height: 250px;
+}
+#now-tem{
+	padding-top: 20px;
+	font-size: .7rem;
+	font-weight: 400;
+}
+.main-box .T-box h1{
+	font-size: .24rem;
+	font-weight: 500;
+	color: #FFFFFF;
+}
+.main-box .T-box p{
+	margin: 12px 0;
+	position: relative;
+	display: block;
+	font-size: .20rem;
+	color: #FFFFFF;
+}
+.T-box p .nowday-img{
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	background-size: contain;
+	position: absolute;
+	top: -10px;
+	left: 60%;
+}
+.future-day ul li{
+	padding-top: 20px;
+	height: 45px;
+	position: relative;
+	color: #FFFFFF;
+	width: 90%;
+	margin: 0 auto;
+	border-bottom: 1px solid #DDD;
+}
+.future-day .temp-box h4{
+	margin: auto 0;
+	font-size: .16rem;
+	float: left;
+	font-weight: 400;
+}
+.future-day .temp-box i{
+	font-style: normal;
+	margin: auto 0;
+	font-size: .16rem;
+	float: right;
+}
+.future-day .temp-box span{
+	position: absolute;
+	left: 50%;
+	margin-left: -15px;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	background-size: contain;
+}
+
+
+
+
+.hourly-weather{
+	
+	width: 100%;
+	height: 100px;
+	overflow-x: auto;
+}
+.hourly-weather ul{
+	
+	width: 2410px;
+}
+.hourly-weather .hourly-tmp{
+	text-align: center;
+	float: left;
+	width: 100px;
+	height: 100px;
+	
+}
+.hourly-img{
+	width: 48px;
+	height: 48px;
+	display: block;
+	margin: 0 auto;
+}
+.hourly-time,.hourly-nub{
+	color: #FFFFFF;
+	font-size: 20px;
+}
